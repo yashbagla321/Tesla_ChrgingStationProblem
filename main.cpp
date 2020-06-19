@@ -5,13 +5,14 @@
 #include "dijkstra.cpp"
 
 
-const int N = 303;
-int max_range = 320;
-int speed = 105;
+const int N = 303;        //num of stations
+int max_range = 320;      //max chaege range of the car
+int speed = 105;          // car speed
 int inf = 99999999;
 
 int main(int argc, char** argv)
 {
+    //Creating a distance Cost Matrix between stations
     double dist[N][N];
     for(int i = 0; i < N; i++)
     {
@@ -27,6 +28,7 @@ int main(int argc, char** argv)
         }
     }
 
+    //Creating a Time cost matrix between the stations to acoount for charging speed as well
     double time[N][N];
     for(int i = 0; i < N; i++)
     {
